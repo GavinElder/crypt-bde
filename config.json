@@ -1,3 +1,4 @@
 {
-    "url": "https://crypt.yourserver.com"
+    "url": "https://crypt.yourserver.com",
+    "encryption_method": "XtsAes256"
 }
