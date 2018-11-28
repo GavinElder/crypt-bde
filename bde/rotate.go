@@ -3,7 +3,6 @@ package bde
 import (
 	"fmt"
 
-	"github.com/bdemetris/crypt-bde/config"
 	"github.com/pkg/errors"
 )
 
@@ -32,7 +31,7 @@ func RotateKey() error {
 	// }
 
 	//If we have a key, rotate it
-	status, err := GetEncryptionStatus(*config.Config)
+	status, err := GetEncryptionStatus()
 	if err != nil {
 		return errors.Wrap(err, "rotate: getting encryption status")
 	}
