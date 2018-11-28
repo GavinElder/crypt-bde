@@ -25,7 +25,7 @@ func New(path string) (*Config, error) {
 type Config struct {
 	Key              string
 	URL              string
-	EncryptionMethod string
+	encryptionMethod string
 	loaded           bool
 }
 

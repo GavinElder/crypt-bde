@@ -13,9 +13,11 @@ import (
 //Windows seems to allow infinite keys to exist, each time this runs it will create a new key
 //if the disk is encrypted already.  If the disk is not encrypted it will encrypt it.
 func CreateRecoveryPasswordProtector(conf *config.Config) (string, error) {
-	conf.EncryptionMethod
-	bitlockerEncryptionArgs := []string{"-protectors", "-add", "-rp", "c:"}
-
+	if conf.encryptionMethod != "" {
+		bitlockerEncryptionArgs := []string{"-protectors", "-add", "-rp", "c:"}
+	} else {
+		bitlockerEncryptionArgs := []string{"-protectors", "-add", "-rp", "c:"}
+	}
 	cmd := exec.Command("C:\\Windows\\System32\\manage-bde.exe", bitlockerEncryptionArgs...)
 
 	o, err := cmd.Output()

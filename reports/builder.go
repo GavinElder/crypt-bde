@@ -2,7 +2,6 @@ package reports
 
 import (
 	"github.com/bdemetris/crypt-bde/bde"
-
 	"github.com/bdemetris/crypt-bde/config"
 	"github.com/pkg/errors"
 )
