@@ -19,7 +19,7 @@ func CreateRecoveryPasswordProtector(conf *config.Config) (string, error) {
 	if conf.encryptionMethod == "" {
 		bitlockerEncryptionArgs = []string{"-protectors", "-add", "-rp", "c:"}
 	} else {
-		bitlockerEncryptionArgs = []string{"-protectors", "-add", "-rp", "c:", "-EncryptionMethod", conf.Key}
+		bitlockerEncryptionArgs = []string{"-protectors", "-add", "-rp", "c:", "-EncryptionMethod", conf.encryptionMethod}
 	}
 
 	cmd := exec.Command("C:\\Windows\\System32\\manage-bde.exe", bitlockerEncryptionArgs...)
