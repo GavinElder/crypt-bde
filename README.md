@@ -34,6 +34,24 @@ make build
 
 The configuration is defined in the config.json example is contained in the root of the Repo please update this with the URL of your crypt server.
 
+### url 
+
+This is the url of your crypt server to escrow keys to.
+
+### encryption_key
+
+Microsoft Bitlocker supports multiple encryption algorithms and unless specified in your config file. 
+More details [HERE](https://docs.microsoft.com/en-us/powershell/module/bitlocker/enable-bitlocker?view=win10-ps))
+
+Valid values are:
+
+```shell
+"EncryptionMethod": "Aes128"
+"EncryptionMethod": "Aes256"
+"EncryptionMethod": "XtsAes128"
+"EncryptionMethod": "XtsAes256"
+```
+
 ## Running
 
 Rotate keys - By default the rotate key command will rotate and then escrow the keys.
