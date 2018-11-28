@@ -32,15 +32,23 @@ make build
 
 ## Configuration
 
-The configuration is defined in the config.json example is contained in the root of the Repo please update this with the URL of your crypt server.
+The configuration is defined in the config.json example is contained in the root of the Repo please update the values as needed.
 
-### url 
+```json
+{
+    "url": "https://crypt.yourserver.com",
+    "EncryptionMethod": "XtsAes256"
+}
+```
 
-This is the url of your crypt server to escrow keys to.
+### url
+
+This is a required value and should be the url of your crypt server.
 
 ### encryption_key
 
-Microsoft Bitlocker supports multiple encryption algorithms and unless specified in your config file. 
+This is an optional field if not specified it will default to `xts-aes 128`
+Microsoft Bitlocker supports multiple encryption algorithms and unless specified in your config file.
 More details [HERE](https://docs.microsoft.com/en-us/powershell/module/bitlocker/enable-bitlocker?view=win10-ps))
 
 Valid values are:
