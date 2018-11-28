@@ -6,13 +6,22 @@ import (
 	"regexp"
 
 	"github.com/pkg/errors"
+	"github.com/bdemetris/crypt-bde/config"
 )
+
+
 
 //CreateRecoveryPasswordProtector generates another key of type RecoveryPassword
 //Windows seems to allow infinite keys to exist, each time this runs it will create a new key
 //if the disk is encrypted already.  If the disk is not encrypted it will encrypt it.
-func CreateRecoveryPasswordProtector() (string, error) {
-	cmd := exec.Command("C:\\Windows\\System32\\manage-bde.exe", "-protectors", "-add", "-rp", "c:")
+func CreateRecoveryPasswordProtector(conf *config.Config) (string, error) {
+
+	if  != nil{
+		PSCmdBitLockerEnable = (''"C:\\Windows\\System32\\manage-bde.exe", "-protectors", "-add", "-rp", "c:")
+	} else {
+		PSCmdBitLockerEnable = ("C:\\Windows\\System32\\manage-bde.exe", "-protectors", "-add", "-rp", "c:")
+	}
+	cmd := exec.Command(PSCmdBitLockerEnable)
 
 	o, err := cmd.Output()
 	if err != nil {

@@ -23,10 +23,10 @@ func New(path string) (*Config, error) {
 
 // Config is Crypt client config.
 type Config struct {
-	Key string
-	URL string
-
-	loaded bool
+	Key              string
+	URL              string
+	EncryptionMethod string
+	loaded           bool
 }
 
 // Loaded verifies if the struct was created by the LoadConfig struct.
